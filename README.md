@@ -3,6 +3,8 @@
 On macOS Monterey (12.4), with an Apple M1 Pro CPU, SQLite 3.39.x fails to create a database,
 whereas 3.38.5 manages it.
 
+SQLite forum thread: https://www.sqlite.org/forum/forumpost/61cd3aa835ff3315
+
 ## Observed results:
 
 Clone the repository and run `make`. I used `clang` in the Makefile but you can replace it by
