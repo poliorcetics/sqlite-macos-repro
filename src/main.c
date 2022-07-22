@@ -2,6 +2,12 @@
 #include <unistd.h>
 #include "sqlite3.h"
 
+// Changing this to use `build` instead of `/tmp` make it work
+//
+// Probably related: https://www.sqlite.org/releaselog/3_39_0.html
+//
+// > The unix os interface resolves all symbolic links in database filenames to create a canonical
+//   name for the database before the file is opened.
 #define DB_NAME ("/tmp/repro-sqlite-" SQLITE_VERSION ".db3")
 
 int main() {
