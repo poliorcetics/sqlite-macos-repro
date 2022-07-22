@@ -8,10 +8,11 @@
 //
 // > The unix os interface resolves all symbolic links in database filenames to create a canonical
 //   name for the database before the file is opened.
-#define DB_NAME ("/tmp/repro-sqlite-" SQLITE_VERSION ".db3")
+#define DB_NAME ("/tmp/repro-sqlite-" SQLITE_SOURCE_ID ".db3")
 
 int main() {
   printf("SQLite version: %s\n", SQLITE_VERSION);
+  printf("SQLite source id: %s\n", SQLITE_SOURCE_ID);
 
   if (access(DB_NAME, F_OK) == 0) {
     printf("[INFO] File '%s' exists, removing\n", DB_NAME);
