@@ -8,6 +8,11 @@ SQLite forum thread: https://www.sqlite.org/forum/forumpost/61cd3aa835ff3315
 - Version **without** the bug: [GitHub](https://github.com/sqlite/sqlite/commit/cc212e4450e5a3f38b88508f1e3d90045deb8fd1) / [Fossil](https://sqlite.org/src/info/764b71267e0b31ff7eaf2a0def7526a1a02dce4d5b456dea060d97ed342efdd1)
 - Version **with** the bug: [GitHub](https://github.com/sqlite/sqlite/commit/6868bca6c5fae2c93f961313efc41f9330e8f8f2) / [Fossil](https://sqlite.org/src/info/d55273e36e312336b8fc77dc771657d3b2c3437fbbd79f3be37701982560d634)
 
+## Conclusion
+
+It was the opposite: the old version opened symlinks on macOS even when `SQLITE_OPEN_NOFOLLOW` was present, the new
+one does not, which is more logical.
+
 ## Observed results:
 
 Clone the repository and run `make`. I used `clang` in the Makefile but you can replace it by
